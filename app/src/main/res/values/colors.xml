@@ -8,7 +8,11 @@
     <color name="black">#FF000000</color>
     <color name="white">#FFFFFFFF</color>
 
-    <color name="black_shade_1">#0E2433</color>
-    <color name="black_shade_2">#1C4966</color>
+    <color name="black_shade_1">#FFFFFF</color>
+    <color name="black_shade_2">#000000</color>
+    <color name="red">#F44336</color>
+    <color name="text_color">#8A2358</color>
+    <color name="timestamp_color">#FFFF00</color>
+    <color name="hint_text_color">#FF018786</color>
 
 </resources>

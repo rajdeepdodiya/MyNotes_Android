@@ -4,6 +4,7 @@ import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.widget.Toast
+import androidx.appcompat.app.AlertDialog
 import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProvider
 import androidx.recyclerview.widget.LinearLayoutManager
@@ -39,7 +40,6 @@ class MainActivity : AppCompatActivity(), NoteClickInterface, NoteDeleteClickInt
             val intent = Intent(this@MainActivity, AddEditNoteActivity::class.java)
             intent.putExtra("action", "add")
             startActivity(intent)
-            this.finish()
         }
 
     }
@@ -49,12 +49,17 @@ class MainActivity : AppCompatActivity(), NoteClickInterface, NoteDeleteClickInt
         intent.putExtra("note", note)
         intent.putExtra("action", "edit")
         startActivity(intent)
-        this.finish()
     }
 
     override fun onDeleteIconClick(note: Note) {
-     viewModel.deleteNote(note.id)
-        Toast.makeText(this, "${note.noteTitle} deleted", Toast.LENGTH_SHORT).show()
-
-    }
+        val builder = AlertDialog.Builder(this)
+        builder.setTitle("Delete Note")
+        builder.setMessage("Are you sure you want to delete ${note.noteTitle} ?")
+        builder.setPositiveButton("Yes"){ dialog,which ->
+            viewModel.deleteNote(note)
+            Toast.makeText(this, "${note.noteTitle} deleted", Toast.LENGTH_SHORT).show()
+        }
+        builder.setNegativeButton("No"){ dialog,which -> }
+        builder.show()
+     }
 }

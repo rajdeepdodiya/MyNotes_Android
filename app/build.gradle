@@ -43,7 +43,7 @@ dependencies {
     implementation 'androidx.navigation:navigation-fragment-ktx:2.4.1'
     implementation 'androidx.navigation:navigation-ui-ktx:2.4.1'
     def ROOM_VERSION = "2.4.1"
-    def LIFECYCLE_VERSION = "2.5.0-alpha02"
+    def LIFECYCLE_VERSION = "2.4.1"
     def KOTLIN_VERSION = "1.6.0"
 
     implementation 'androidx.core:core-ktx:1.7.0'
@@ -56,7 +56,7 @@ dependencies {
     androidTestImplementation "androidx.room:room-testing:$ROOM_VERSION"
 
     //Lifecycle Components
-    implementation "androidx.lifecycle:lifecycle-viewmodel:$LIFECYCLE_VERSION"
+    implementation "androidx.lifecycle:lifecycle-viewmodel-ktx:$LIFECYCLE_VERSION"
     implementation "androidx.lifecycle:lifecycle-livedata:$LIFECYCLE_VERSION"
     implementation "androidx.lifecycle:lifecycle-common-java8:$LIFECYCLE_VERSION"
 

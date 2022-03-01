@@ -10,5 +10,5 @@ class Note (@ColumnInfo(name = "title") val noteTitle: String,
             @ColumnInfo(name = "description") val description: String,
             @ColumnInfo(name = "timestamp") val timeStamp: String): Serializable {
 
-    @PrimaryKey(autoGenerate = true) var id = 0
+    @PrimaryKey(autoGenerate = true) var id: Int = 0
 }
